@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% extends "main.html" %}
+    <hr />
+    {% block content %} {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/profile.css' %}"
+    />
+    <h1>{{ user.username }}</h1>
+
+    <main>
+      <section class="left">{% include 'page/topics_component.html' %}</section>
+      <section class="middle">{% include 'page/feed_component.html' %}</section>
+      <section class="right">
+        {% include 'page/activity_component.html' %}
+      </section>
+    </main>
+    {% endblock content %}
+  </body>
+</html>

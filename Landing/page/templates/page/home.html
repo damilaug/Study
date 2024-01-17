@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+</html>
+  <body>
+    {% extends "main.html" %} {% block content %}
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css'%}"
+    />
+    <main class="container">
+      <aside class="left">
+        {% include 'page/topics_component.html' %}
+      </aside>
+
+      <aside class="middle">
+        {% if rooms_count == 1 %}
+        <h3>{{rooms_count}} Room available</h3>
+        {%elif rooms_count == 0 %}
+        <h3>{{rooms_count}} Room available</h3>
+        {% else %}
+        <h3>{{rooms_count}} Rooms available</h3>
+        {% endif %}
+        <a href="{% url 'create_room' %}"> Create Room</a>
+        <hr />
+        {% include 'page/feed_component.html' %}
+      </aside>
+      <aside class="left">
+        {%  include "page/activity_component.html" %}
+      </aside>
+    </main>
+
+    {%endblock content %}
+  </body>
+</html>

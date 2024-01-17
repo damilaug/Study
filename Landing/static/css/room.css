@@ -1,0 +1,8 @@
+body {
+  background: green;
+}
+main {
+  background: #fff;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}

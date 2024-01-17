@@ -1,0 +1,19 @@
+main {
+  background: rgb(102, 31, 78);
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  color: aliceblue;
+}
+.left {
+  padding: 20px;
+  margin: 0;
+  line-height: 40px;
+}
+.middle {
+  padding: 20px;
+  margin: 0;
+}
+.right {
+  padding: 0;
+  margin: 0;
+}
