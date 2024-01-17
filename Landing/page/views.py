@@ -121,6 +121,7 @@ def createRoom(request):
              name = request.POST.get('name'),
              description = request.POST.get('description')
         )
+        
         return redirect("index")
      #    form = RoomForm(request.POST)
      #    if form.is_valid():
